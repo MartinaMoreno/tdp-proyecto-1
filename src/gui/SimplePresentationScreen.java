@@ -36,7 +36,9 @@ public class SimplePresentationScreen extends JFrame {
 	private JTextField setURL;
 
 	public SimplePresentationScreen(Student studentData) {
+		/* Modifica el ícono que utiliza Java */
 		setIconImage(Toolkit.getDefaultToolkit().getImage(SimplePresentationScreen.class.getResource("/images/tdp.png")));
+		
 		this.studentData = studentData;
 		
 		/* Crea y establece atributos del panel principal */
@@ -98,7 +100,7 @@ public class SimplePresentationScreen extends JFrame {
 		contentPane.add(foto);
 		
 		//Foto de presentación, asegura que la escala de la misma coincida con el  tamaño del label
-		ImageIcon imagen = new ImageIcon(getClass().getResource("/images/6356630.png"));
+		ImageIcon imagen = new ImageIcon(getClass().getResource(studentData.getPathPhoto()));
 		ImageIcon tamaño = new ImageIcon(imagen.getImage().getScaledInstance(foto.getWidth(), foto.getHeight(), Image.SCALE_SMOOTH));
 		foto.setIcon(tamaño);
 		
