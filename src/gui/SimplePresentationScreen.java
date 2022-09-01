@@ -1,8 +1,6 @@
 package gui;
 
 import java.awt.Dimension;
-import java.awt.Image;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -96,13 +94,9 @@ public class SimplePresentationScreen extends JFrame {
 		box1.add(githubURL);
 		
 		foto = new JLabel("New label");
+		foto.setIcon(new ImageIcon(SimplePresentationScreen.class.getResource(studentData.getPathPhoto())));
 		foto.setBounds(445, 37, 146, 166);
 		contentPane.add(foto);
-		
-		//Foto de presentación, asegura que la escala de la misma coincida con el  tamaño del label
-		ImageIcon imagen = new ImageIcon(getClass().getResource(studentData.getPathPhoto()));
-		ImageIcon tamaño = new ImageIcon(imagen.getImage().getScaledInstance(foto.getWidth(), foto.getHeight(), Image.SCALE_SMOOTH));
-		foto.setIcon(tamaño);
 		
 		/* Creación e implementación de textFields */
 		setLU = new JTextField();
